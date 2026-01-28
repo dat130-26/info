@@ -40,7 +40,7 @@
             {{ property.phone }}<br />
             {{ property.homepage |urlize }}<br />
         </p>
-        {# TODO: insert the photo here #}
+        <img src="{{ property.photo }}" alt="{{ property.name }}">
     </div>
 
     <div id="booking">
@@ -48,15 +48,15 @@
         <table>
             <tr>
                 <td class="rowhead">Your reservation: </td>
-                <td></td>
+                <td>nights:{{ book.nights }} rooms:{{ book.rooms}}</td>
             </tr>
             <tr>
                 <td class="rowhead">Check-in:</td>
-                <td></td>
+                <td>{{ book.checkin}}</td>
             </tr>
             <tr>
                 <td class="rowhead">Check-out:</td>
-                <td></td>
+                <td>{{ book.checkout}}</td>
             </tr>
         </table>
     </div>

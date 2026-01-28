@@ -24,7 +24,7 @@ def index():
         "checkout": "21/03/2018"
     }
 
-    return render_template("booking.html", property=prop)
+    return render_template("booking.html", property=prop, book = book)
 
 
 if __name__ == "__main__":
