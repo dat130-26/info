@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+    {% if city != "" %}
+    <p>
+        Postcode {{ pc }} belongs to {{ city }}.
+    </p>
+    {% else %}
+    <p>
+        No entry found for postcode {{ pc }}.
+    </p>
+    {% endif %}
+
+    
+
+    <a href="{{ url_for('index') }}">Back</a>
+{% endblock %}

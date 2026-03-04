@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+  {% if city != "" and pc != "" %}
+    <p>You added postcode {{ pc }} with city {{ city }}.</p>
+  {% else %}
+    <p>No postcode added.</p>
+  {% endif %} 
+  
+  <h2>All postc odes</h2>
+  <table> 
+    <tr>  
+      <th>Code< /th>
+      <th>City< /th>
+    </tr> 
+    {% for code  in list|sort(attribute=0) %}
+    <tr>  
+      <td>{{ co de[0] }}</td>
+      <td>{{ co de[1] }}</td>
+    </tr> 
+    {% endfor % }
+  </table>  
+  
+  <a href="{{ url_for('index') }}">Back</a>
+{% endblock %}
