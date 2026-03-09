@@ -38,9 +38,13 @@ MOVIES = [
 ]
 
 
+
 @app.route("/")
 def index():
     return render_template("movies.html", movies=MOVIES)
+
+def SortOrderOfMovies():
+    pass
 
 
 if __name__ == "__main__":
