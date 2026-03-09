@@ -12,3 +12,5 @@
 * [MySQL from Python Example](mysql/example.py)
 * [MySQL from Flask Exercises](mysql/exercises)
 * [MySQL from Flask Solutions](mysql/solutions/)
+* [Flask Cookies Exercises](cookies/exercises)
+* [Flask Cookies Solutions](cookies/solutions)

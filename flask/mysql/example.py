@@ -104,7 +104,7 @@ def query_data(conn):
 if __name__ == "__main__":
 
     try:
-        conn = mysql.connector.connect(user='root', password='root', host='127.0.0.1')
+        conn = mysql.connector.connect(user='root', password='nikolaus', host='127.0.0.1')
         create_db(conn)
         conn.database = 'dat130'
     except mysql.connector.Error as err:

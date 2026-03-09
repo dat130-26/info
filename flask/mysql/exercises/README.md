@@ -1,7 +1,7 @@
 # Server Side Programming exercises (Python, Flask), Part III.
 
   * [MySQL Connector/Python](https://dev.mysql.com/doc/connector-python/en/)
-  * [Flask QuickStart](http://flask.pocoo.org/docs/0.12/quickstart/)
+  * [Flask QuickStart](https://flask.palletsprojects.com/en/stable/quickstart/)
   * [Jinja Templates](http://jinja.pocoo.org/docs/2.10/templates/)
 
 

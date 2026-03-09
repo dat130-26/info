@@ -3,7 +3,15 @@ Flask: Using MySQL
 """
 
 from flask import Flask, render_template, g, request, flash, redirect, url_for
-import mysql.connector
+
+from database import (
+    add_postcode,
+    connect_db,
+    delete_postcode,
+    init_postcodes,
+    list_postcodes,
+    lookup_location,
+)
 
 app = Flask(__name__)
 
@@ -18,8 +26,12 @@ app.secret_key = 'some_secret'  # needed for flashing
 def get_db():
     if not hasattr(g, "_database"):
         print("create connection")
-        g._database = mysql.connector.connect(host=app.config["DATABASE_HOST"], user=app.config["DATABASE_USER"],
-                                       password=app.config["DATABASE_PASSWORD"], database=app.config["DATABASE_DB"])
+        g._database = connect_db(
+            host=app.config["DATABASE_HOST"],
+            user=app.config["DATABASE_USER"],
+            password=app.config["DATABASE_PASSWORD"],
+            database=app.config["DATABASE_DB"],
+        )
     return g._database
 
 
@@ -43,19 +55,11 @@ def init():
         "9019": "Tromsø"
     }
     db = get_db()
-    cur = db.cursor()
     try:
-        sql = "CREATE TABLE postcodes (postcode VARCHAR(4), location VARCHAR(20), PRIMARY KEY(postcode))"
-        cur.execute(sql)
-        for k, v in postcodes.items():
-            sql = "INSERT INTO postcodes (postcode, location) VALUES (%s, %s)"
-            cur.execute(sql, (k, v))
-        db.commit()  # commit
+        init_postcodes(db, postcodes)
         flash("Successful initialization")
-    except mysql.connector.Error as err:
+    except Exception as err:
         return render_template("error.html", msg=err)
-    finally:
-        cur.close()
 
     return redirect(url_for("index"))
 
@@ -64,21 +68,11 @@ def init():
 def list_all():
     """Lists all postcodes."""
     db = get_db()
-    cur = db.cursor()
     try:
-        postcodes = []  # holds the data that we will return
-        sql = "SELECT postcode, location FROM postcodes ORDER BY postcode"
-        cur.execute(sql)
-        for (postcode, location) in cur:
-            postcodes.append({
-                "postcode": postcode,
-                "location": location
-            })
+        postcodes = list_postcodes(db)
         return render_template("listing.html", postcodes=postcodes)
-    except mysql.connector.Error as err:
+    except Exception:
         return render_template("error.html", msg="Error querying data")
-    finally:
-        cur.close()
 
 
 @app.route("/add")
@@ -94,16 +88,11 @@ def do_add():
     location = request.form.get("location", "")
     if postcode and location:
         db = get_db()
-        cur = db.cursor()
         try:
-            sql = "INSERT INTO postcodes (postcode, location) VALUES (%s, %s)"
-            cur.execute(sql, (postcode, location))
-            db.commit()
+            add_postcode(db, postcode, location)
             flash("Postcode added")
-        except mysql.connector.Error as err:
+        except Exception:
             return render_template("error.html", msg="Error adding postcode. (Does it exist already?)")
-        finally:
-            cur.close()
         return redirect(url_for("add"))
     else:
         return render_template("error.html", msg="Input error")
@@ -113,16 +102,11 @@ def do_add():
 def delete(postcode):
     """Deletes a given postcode."""
     db = get_db()
-    cur = db.cursor()
     try:
-        sql = "DELETE FROM postcodes WHERE postcode=%s"
-        cur.execute(sql, (postcode,))  # it's a tuple
-        db.commit()
+        delete_postcode(db, postcode)
         return redirect(url_for("list_all"))
-    except mysql.connector.Error as err:
+    except Exception:
         return render_template("error.html", msg="Error deleting data")
-    finally:
-        cur.close()
 
 
 @app.route("/lookup")
@@ -132,18 +116,10 @@ def lookup():
     postcode = request.args.get("postcode")
     if postcode:
         db = get_db()
-        cur = db.cursor()
         try:
-            sql = "SELECT location FROM postcodes WHERE postcode=%s"
-            cur.execute(sql, (postcode,))  # it's a tuple
-            try:
-                (location,) = cur.fetchone()  # the result of fetchone() is also a tuple!
-            except:
-                pass  # no matching record was found
-        except mysql.connector.Error as err:
+            location = lookup_location(db, postcode)
+        except Exception:
             return render_template("error.html", msg="Error during search")
-        finally:
-            cur.close()
     return render_template("lookup.html", postcode=postcode, location=location)
 
 
@@ -156,4 +132,5 @@ def index():
 if __name__ == "__main__":
     password = input("Please enter the root password for your mysql server:")
     app.config["DATABASE_PASSWORD"] = password
+    
     app.run()

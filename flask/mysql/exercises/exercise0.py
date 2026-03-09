@@ -4,7 +4,7 @@ from mysql.connector import Error
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': ''
+    'password': 'nikolaus'
 }
 
 DATABASE = "dat130"
@@ -46,8 +46,21 @@ MOVIES = [
 ]
 
 def create_table(conn):
-    # TODO
-    pass
+    cur = conn.cursor()
+    sql = ("CREATE TABLE movies ("
+          "imdb_id varchar(10) NOT NULL, "
+          "title varchar(40) NOT NULL, "
+          "year int(11) NOT NULL, "
+          "rating double NOT NULL, "
+          "synopsis text NOT NULL, "
+          "PRIMARY KEY (imdb_id) "
+          ") ENGINE=InnoDB DEFAULT CHARSET=utf8;")
+    try:
+        cur.execute(sql)
+    except mysql.connector.Error as err:
+        print("Error: {}".format(err.msg))
+    finally:
+        cur.close()
 
 def insert_movie(conn,id, title, year, rating, synopsis):
     # TODO
@@ -69,5 +82,5 @@ if __name__ == "__main__":
         for m in MOVIES:
             insert_movie(conn, m['imdb_id'], m['title'], m['year'], m['rating'], m.get('synopsis',""))
         movies = query_movies(conn)
-        print(movies[1])
+        print(movies)
         conn.close()
