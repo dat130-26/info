@@ -14,3 +14,5 @@
 * [MySQL from Flask Solutions](mysql/solutions/)
 * [Flask Cookies Exercises](cookies/exercises)
 * [Flask Cookies Solutions](cookies/solutions)
+* [Login Exercises](login/exercises)
+* [Login Solutions](login/solutions)
