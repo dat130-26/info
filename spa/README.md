@@ -2,10 +2,10 @@
 
 ### Examples:
 
+- [MPA (Flask templates)](examples/mpa/)
 - [No Router (vanilla SPA)](examples/norouter/)
 - [Hash Router](examples/hashrouter/)
 - [History Router](examples/historyrouter/)
-- [MPA (Flask templates)](examples/mpa/)
 - [Vue: History Router](examples/vue-examples/historyrouter/)
 - [Vue: Playlist (CDN)](examples/vue-examples/playlist/)
 - [Vue: Playlist (Vite)](examples/vue-examples/vite-playlist/)
