@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist app using vue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{{ url_for('static', filename='vueapp.js') }}"></script>
+
+    
+    
+</head>
+<body>
+
+<div id="app">
+<!-- v-on listens to browser events and runs Vue methods instead of inline JS handlers. -->
+<!-- Here prevent just stops the browser from reloading the page, when the form is submitted. -->
+<form v-on:submit.prevent>
+    <div>
+        <!-- v-model creates two-way binding: input text <-> Vue state variable. -->
+        <input type="text" v-model="newSongName" size="40" placeholder="Song name">
+        <input type="text" v-model="newArtistName" size="30" placeholder="Artist name">
+        <input type="button" id="addButton" value="Add Song" v-on:click="addSong">
+    </div>
+    <div>
+        <input type="text" v-model="searchTerm" size="20" placeholder="search">
+        <input type="button" id="sortButton" value="Sort" v-on:click="sortSongs">
+    </div>
+</form>
+
+<ul id="playlist">
+    <!-- v-for creates one LI for each element in filtredSongs -->
+    <li v-for="(song, index) in filteredSongs" v-bind:key="song.name + '-' + index">
+        {#[[ ... ]] prints values from Vue. We use this because {{ ... }} is already
+             used by Jinja on the Flask backend before the page reaches the browser. #}
+        [[ song.name ]] - [[ song.artist ]]
+        <img src="/static/images/delete.png" class="delete" v-on:click="deleteSong(song)">
+    </li>
+</ul>
+</div>
+
+{# This {{ ... }} is Jinja template syntax, rendered on the backend by Flask. #}
+<script id="initial-playlist" type="application/json">{{ playlist | tojson }}</script>
+
+</body>
+</html>
+
