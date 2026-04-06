@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue History Router Example</title>
+    <!-- Import Vue from a CDN so we can use it without a build step. -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Import Vue Router from a CDN to connect URLs to Vue components. -->
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+    <!-- These files define the components used by the router below. -->
+    <script src="/static/home.js"></script>
+    <script src="/static/about.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <!-- v-on:click tells Vue to listen for the click and call a Vue method.
+             This replaces plain HTML onclick handlers with Vue-managed event handling. -->
+        <button v-on:click="go('/')">Home</button>
+        <button v-on:click="go('/about')">About</button>
+        <button v-on:click="go('/contact')">Contact</button>
+        <button v-on:click="goBack">Back</button>
+        <!-- Vue also handles link clicks here, and .prevent stops the browser's default navigation. -->
+        <a href="/" v-on:click.prevent="go('/')">Home</a>
+        <a href="/about" v-on:click.prevent="go('/about')">About</a>
+        <a href="/contact" v-on:click.prevent="go('/contact')">Contact</a>
+      </nav>
+
+      <!-- Vue Router inserts the component for the current URL here. -->
+      <router-view></router-view>
+
+      <!-- Double curly braces show a Vue value inside HTML text. -->
+      <div>You have changed the page <span>{{ routingCount }}</span> times</div>
+    </div>
+
+    <script>
+      // reactive() creates shared state that Vue will keep in sync with the page.
+      const routingState = Vue.reactive({
+        routingCount: 0
+      });
+
+      // A component is an object that describes what should be rendered.
+      const notFoundComponent = {
+        template: '<h1>404</h1>'
+      };
+
+      // Each route connects a URL path to the component that should be shown.
+      const routes = [
+        {
+          path: window.homecomponent.route,
+          component: window.homecomponent
+        },
+        {
+          path: window.aboutcomponent.route,
+          component: window.aboutcomponent
+        },
+        {
+          // pathMatch catches every URL that did not match earlier routes.
+          path: '/:pathMatch(.*)*',
+          component: notFoundComponent
+        }
+      ];
+
+      // createWebHistory() uses normal browser URLs such as /about.
+      const router = VueRouter.createRouter({
+        history: VueRouter.createWebHistory(),
+        routes
+      });
+
+      // afterEach() runs after every successful navigation.
+      router.afterEach(() => {
+        routingState.routingCount += 1;
+      });
+
+      // createApp() creates the root Vue application mounted on #app.
+      const app = Vue.createApp({
+        data() {
+          // Values returned from data() are available in the HTML template.
+          return routingState;
+        },
+        methods: {
+          go(path) {
+            // Ask Vue Router to change route instead of editing the DOM manually.
+            this.$router.push(path);
+          },
+          goBack() {
+            this.$router.go(-1);
+          }
+        }
+      });
+
+      // Plugins such as Vue Router must be registered before mount().
+      app.use(router);
+      app.mount('#app');
+    </script>
+  </body>
+</html>
