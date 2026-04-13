@@ -14,6 +14,30 @@
     - [Frontend](#frontend)
     - [Layout Requirements](#layout-requirements)
   - [Functional Requirements](#functional-requirements)
+    - [Score Table](#score-table)
+    - [Idea followed          | 5 |](#idea-followed-----------5-)
+    - [Howto Run works         | 3 |](#howto-run-works----------3-)
+    - [Log in and register users | 5 |](#log-in-and-register-users--5-)
+    - [Example data | 2 |](#example-data--2-)
+    - [JS Form validation | 5 |](#js-form-validation--5-)
+    - [Sort and search in JS | 3 |](#sort-and-search-in-js--3-)
+    - [Sort stored | 3 |](#sort-stored--3-)
+    - [\>5 Tables | 6 |](#5-tables--6-)
+    - [Complex queries | 4 |](#complex-queries--4-)
+    - [Insert, Update, delete data | 6 |](#insert-update-delete-data--6-)
+    - [AJAX request used | 6 |](#ajax-request-used--6-)
+    - [Dynamic layout | 2 |](#dynamic-layout--2-)
+    - [Semantic tags | 2 |](#semantic-tags--2-)
+    - [Code separation | 5 |](#code-separation--5-)
+    - [Best practice routes | 5 |](#best-practice-routes--5-)
+    - [Server side validation | 5 |](#server-side-validation--5-)
+    - [Errors handled and displayed | 5 |](#errors-handled-and-displayed--5-)
+    - [Authentication | 5 |](#authentication--5-)
+    - [Access control | 3 |](#access-control--3-)
+    - [Extra feature | 20 |](#extra-feature--20-)
+      - [CSS Features example:](#css-features-example)
+      - [JavaScript Features example:](#javascript-features-example)
+      - [Python features](#python-features)
   - [Presentation](#presentation)
 
 
@@ -121,9 +145,147 @@ If you copy CSS files from the web, e.g. `reset.css` or `normalize.css`, you mus
 
 ## Functional Requirements
 
-Mostly your project need to have features mostly already covered in the assignments. 
-Additionally, you will receive points for extra features.
-*More details and examples for extra features will be provided next week.*
+Some features of your application are required. 
+For example, your application must include login, and registration of new users and sort and search functionality.
+
+The required functionality is reflected in the criteria below. The main criteria make up 80% of the grade, via points shown below. 
+Additionally, you can collect up to 20 points for additional features. See below for examples.
+
+### Score Table
+
+| Criteria | pts |
+| --------------------- | --- |
+| Idea followed          | 5 |
+| Howto Run works         | 3 |
+| Log in and register users | 5 |
+| Example data | 2 |
+| JS Form validation | 5 |
+| Sort and search in JS | 3 |
+| Sort stored | 3 |
+| >5 Tables | 6 |
+| Complex queries | 4 |
+| Insert, Update, delete data | 6 |
+| AJAX request used | 6 |
+| Dynamic layout | 2 |
+| Semantic tags | 2 |
+| Code separation | 5 |
+| Best practice routes | 5 |
+| Server side validation | 5 |
+| Errors handled and displayed | 5 |
+| Authentication | 5 |
+| Access control | 3 |
+| Extra feature | 20 |
+
+### Idea followed          | 5 |
+
+The application follows the idea from assignment 0.
+
+### Howto Run works         | 3 |
+
+The `README.md` contains sufficient and working explanation how to run the project.
+
+### Log in and register users | 5 |
+
+It is possible to log in with an existing user and register new users.
+
+### Example data | 2 |
+
+The page contains example data, e.g. existing users with data.
+
+### JS Form validation | 5 |
+
+User input forms are validated in JavaScript, to help the user fill forms correctly.
+Full points require that checks are actually performed in JS (not just using HTML attributes) and that errors are nicely displayed.
+
+### Sort and search in JS | 3 |
+
+It should be possible to sort and search some part of the data. Sort and search should be implemented in JS using JS as source of truth.
+
+### Sort stored | 3 |
+
+Sorting should be stored, so data is still sorted in the same order, when a user returns.
+
+### >5 Tables | 6 |
+The database contains at least 5 tables with primary and foreign keys.
+
+### Complex queries | 4 |
+The application uses complex queries, including 
+`JOIN` and `GROUP BY`.
+
+### Insert, Update, delete data | 6 |
+
+The applications operations insert, update and delete data, affecting data in all tables.
+
+### AJAX request used | 6 |
+
+The application contains at least one AJAX request, where this makes sense.
+
+### Dynamic layout | 2 |
+
+The page layout is dynamic, adjusting to both wide and medium size screens.
+
+### Semantic tags | 2 |
+
+The html uses semantic tags.
+Try to use them extensively, where possible.
+
+### Code separation | 5 |
+
+Both JS and Python code is meaningfully separated into multiple files.
+
+### Best practice routes | 5 |
+
+Route names follow best practice.
+Where routes do not fit into best practice principles, explain this in comments.
+
+### Server side validation | 5 |
+
+Validate input on server side. 
+Check for malformed or missing input.
+
+### Errors handled and displayed | 5 |
+
+Errors are caught, and shown to the client including appropriate error codes.
+
+### Authentication | 5 |
+
+Proper authentication on routes that require login.
+
+### Access control | 3 |
+
+Ensure access control or authorization for data that is not accessible to all users.
+
+### Extra feature | 20 |
+
+You can gain up to 20 additional points for extra features.
+However, you can get at most 12 points for features implemented in JavaScript and at most 12 points for backend (python) features and 5 points for CSS features. 
+
+Examples are taken from previous projects in the WebProgramming course. Examples that require learning additional technology are marked with *
+
+#### CSS Features example:
+
+Adjustment to phone size screen layout.
+To get 5 points here, adjustment must be significant.
+
+#### JavaScript Features example:
+Some examples of extra features implemented in JS are
+
+- Game running in JS, e.g. Yatzy, Minesweeper, Sudoku or other.
+- Additional use of AJAX beyond a single request.
+
+- *Display of graphs
+- *Dynamic update subscription via long polling or websockets (e.g receive chat messages)
+- *Image upload and preview
+
+#### Python features
+
+- Game logic, or application logic implemented in backend
+- Calls to third party API
+  
+- *Email authorization
+- *Dynamic update subscription via long polling or websockets (e.g receive chat messages)
+- *Advanced login via Flask Login, JWT tokens or similar
+- *Image storage and validation
 
 ## Presentation
 
@@ -135,6 +297,6 @@ All group members have to be present in the presentation. Failure to meet up for
 
 If you have a doctors certificate, showing that you could not attend the presentation, we will arrange a later date.
 
-You have to be able to explain your code on a technical level.
+You have to be able to explain your code on a technical level. 
 For example, if you use the `forEach` method in JavaScript, you should be able to explain:
 > `forEach` is a method on a Array. It takes a function (*callback function*) as argument and executes the *callback function* once for each element in the array. The element is given to the *callback function* as argument.
