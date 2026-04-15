@@ -59,15 +59,15 @@
 ## Optional delivery
 
 You have to present your project in person.
-Presentations will be scheduled on June 10th, 11th and 12th.
+Presentations will be scheduled on June 10th, 11th, and 12th.
 All group members must be present for the presentation.
-Since some exchange students will no longer be in the country, we offer you a chance to deliver your project early and present in May.
+Since some exchange students will no longer be in the country, we offer you a chance to deliver your project early and present it in May.
 
 When doing the optional delivery, you cannot change your project afterward.
 
 ## Assignments
 
-All members of the group need to have passed the assignments. Students who did not pass assignments cannot participate in the project.
+All members of the group need to have passed the assignments. Students who did not pass the assignments cannot participate in the project.
 
 ## Overview
 
@@ -75,7 +75,7 @@ For the exam project, you are required to design and implement a complete web ap
 
 You are free to choose what kind of application you implement, but restrictions apply to both the [technology that you may use](#technology-allowed) and there is some [required functionality](#functional-requirements).
 
-You have to finalize the idea of your application until the [idea deadline](#idea), and have to show and answer questions about your application in person at the [presentation](#presentation).
+You have to finalize the idea for your application by the [idea deadline](#idea) and show and answer questions about your implementation in person at the [presentation](#presentation).
 
 ## Collaboration requirements
 
@@ -83,11 +83,11 @@ Both group members need to contribute.
 
 You should use git and your group's GitHub repository to actively collaborate and coordinate your work.
 
-If one member does less than 30% of the commits on GitHub, he may be failed in the project.
+If one member does less than 30% of the commits on GitHub, he/she may fail in the project.
 
 ## Feedback and meeting
 
-Leander is available for meetings to give feedback, discuss your project and help with any technical difficulties. I recommend that every group asks for feedback on their project idea at least once.
+Leander is available for meetings to give feedback, discuss your project, and help with any technical difficulties. I recommend that every group asks for feedback on their project idea at least once.
 
 Book a meeting using [this link](https://outlook.office.com/bookwithme/user/90a9d200a112481b8677a71c1ab2a195@uis.no/meetingtype/q1YLgJWHFkmBl0VtgX-_ig2?anonymous&ismsaljsauthenabled&ep=mlink).
 
@@ -102,8 +102,8 @@ If your final page does not adhere to the project idea, points will be deducted.
 
 ## Project delivery
 
-On the final delivery, you should hand in your complete code, and a README.md markdown file.
-Your code should also include a SQL script that creates your database, and inserts example data.
+On the final delivery, you should hand in your complete code and a README.md markdown file.
+Your code should also include a SQL script that creates your database and inserts example data.
 
 The `README.md` file should contain the following sections:
 
@@ -111,16 +111,16 @@ The `README.md` file should contain the following sections:
     > Run the `setup.sql` script to create the database.
     > Update the database root user's password in `app.py`.
     > Start the application by running `app.py` in the application folder.
-- Instructions for testing, e.g. `username` and `password` for existing users.
+- Instructions for testing, e.g., `username` and `password` for existing users.
 - List of all functionality: List all implemented functionality, to make sure all your work is taken into account. For example
-  - Dark mode is stored in local storage and present if the user revisits the page.
+  - Dark mode is stored in local storage and is present if the user revisits the page.
   - New categories can be added on the category pages.
     - An Icon and color can be chosen for the category.
-  - If the user tries to register a password with less than 5 characters, an Error is displayed.
+  - If the user tries to register a password with fewer than 5 characters, an Error is displayed.
 
 ## Technology Allowed
 
-You need to use the technology from the course, i.e. **MySQL**, **Flask**, and vanilla JavaScript (no JS framework).
+You need to use the technology from the course, i.e., **MySQL**, **Flask**, and vanilla JavaScript (no JS framework).
 You may only use the frameworks listed below. If you are unsure if something is allowed, please ask on Discord.
 
 ### Backend
@@ -129,7 +129,7 @@ Your web server should be Flask. Data should be stored in a MySQL database.
 You may use the Flask-login plugin, but that is not required. If you do so, note it in your README.md.
 You should write SQL queries.
 Do not use an Object-Relational-Mapper or SQLAlchemy.
-You cannot use Flask-forms, wtforms, Flask-WTF or similar.
+You cannot use Flask-forms, wtforms, Flask-WTF, or similar.
 
 ### Frontend
 
@@ -137,23 +137,23 @@ The frontend should be vanilla JS.
 You may use the Lodash JS library.
 You may use all built-in JS APIs.
 
-You are not allowed to use JS Framework like React, Vue or similar.
+You are not allowed to use a JS Framework like React, Vue, or similar.
 
-You may use additional JS libraries for achieving extra functionality, e.g. showing graphs, or similar.
-Ask on discord, and mention what is used and for what in your README.
+You may use additional JS libraries to implement extra functionality, e.g., to display graphs or similar.
+Ask on Discord, and mention what is used and for what in your README.
 
 ### Layout Requirements
 
 You should use plain CSS. 
-If you copy CSS files from the web, e.g. `reset.css` or `normalize.css`, you must specify this in the README.md. If specified, it will not count as plagiarism.
+If you copy CSS files from the web, e.g., `reset.css` or `normalize.css`, you must specify this in the README.md. If specified, it will not count as plagiarism.
 
 ## Functional Requirements
 
 Some features of your application are required. 
-For example, your application must include login, and registration of new users and sort and search functionality.
+For example, your application must include login, registration of new users, and sort and search functionality.
 
-The required functionality is reflected in the criteria below. The main criteria make up 80% of the grade, via points shown below. 
-Additionally, you can collect up to 20 points for additional features. See below for examples.
+The required functionality is reflected in the criteria below. The main criteria make up 75% of the grade, via points shown below. 
+Additionally, you can collect up to 25 points for additional features. See below for examples.
 
 ### Score Table
 
