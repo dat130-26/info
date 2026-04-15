@@ -23,21 +23,22 @@
     - [Sort and search in JS | 3 |](#sort-and-search-in-js--3-)
     - [Sort stored | 3 |](#sort-stored--3-)
     - [\>5 Tables | 6 |](#5-tables--6-)
-    - [Complex queries | 4 |](#complex-queries--4-)
+    - [Complex queries | 3 |](#complex-queries--3-)
     - [Insert, Update, delete data | 6 |](#insert-update-delete-data--6-)
-    - [AJAX request used | 6 |](#ajax-request-used--6-)
+    - [AJAX request used | 5 |](#ajax-request-used--5-)
     - [Dynamic layout | 2 |](#dynamic-layout--2-)
     - [Semantic tags | 2 |](#semantic-tags--2-)
-    - [Code separation | 5 |](#code-separation--5-)
+    - [Code separation | 4 |](#code-separation--4-)
     - [Best practice routes | 5 |](#best-practice-routes--5-)
-    - [Server side validation | 5 |](#server-side-validation--5-)
+    - [Server side validation | 4 |](#server-side-validation--4-)
     - [Errors handled and displayed | 5 |](#errors-handled-and-displayed--5-)
-    - [Authentication | 5 |](#authentication--5-)
+    - [Authentication | 4 |](#authentication--4-)
     - [Access control | 3 |](#access-control--3-)
-    - [Extra feature | 20 |](#extra-feature--20-)
+    - [Extra feature | 25 |](#extra-feature--25-)
       - [CSS Features example:](#css-features-example)
       - [JavaScript Features example:](#javascript-features-example)
       - [Python features](#python-features)
+      - [Vector database](#vector-database)
   - [Presentation](#presentation)
 
 
@@ -94,7 +95,6 @@ You already proposed a project idea in Assignment 0.
 You can update or change that project idea until 6th of May.
 The project idea only needs to be a very general, e.g. a chat application, or a minesweeper game.
 If your final page does not adhere to the project idea points will be deducted.
-
 
 ## Project delivery
 
@@ -163,18 +163,18 @@ Additionally, you can collect up to 20 points for additional features. See below
 | Sort and search in JS | 3 |
 | Sort stored | 3 |
 | >5 Tables | 6 |
-| Complex queries | 4 |
+| Complex queries | 3 |
 | Insert, Update, delete data | 6 |
-| AJAX request used | 6 |
+| AJAX request used | 5 |
 | Dynamic layout | 2 |
 | Semantic tags | 2 |
-| Code separation | 5 |
+| Code separation | 4 |
 | Best practice routes | 5 |
-| Server side validation | 5 |
+| Server side validation | 4 |
 | Errors handled and displayed | 5 |
-| Authentication | 5 |
+| Authentication | 4 |
 | Access control | 3 |
-| Extra feature | 20 |
+| Extra feature | 25 |
 
 ### Idea followed          | 5 |
 
@@ -208,7 +208,7 @@ Sorting should be stored, so data is still sorted in the same order, when a user
 ### >5 Tables | 6 |
 The database contains at least 5 tables with primary and foreign keys.
 
-### Complex queries | 4 |
+### Complex queries | 3 |
 The application uses complex queries, including 
 `JOIN` and `GROUP BY`.
 
@@ -216,7 +216,7 @@ The application uses complex queries, including
 
 The applications operations insert, update and delete data, affecting data in all tables.
 
-### AJAX request used | 6 |
+### AJAX request used | 5 |
 
 The application contains at least one AJAX request, where this makes sense.
 
@@ -229,7 +229,7 @@ The page layout is dynamic, adjusting to both wide and medium size screens.
 The html uses semantic tags.
 Try to use them extensively, where possible.
 
-### Code separation | 5 |
+### Code separation | 4 |
 
 Both JS and Python code is meaningfully separated into multiple files.
 
@@ -238,7 +238,7 @@ Both JS and Python code is meaningfully separated into multiple files.
 Route names follow best practice.
 Where routes do not fit into best practice principles, explain this in comments.
 
-### Server side validation | 5 |
+### Server side validation | 4 |
 
 Validate input on server side. 
 Check for malformed or missing input.
@@ -247,7 +247,7 @@ Check for malformed or missing input.
 
 Errors are caught, and shown to the client including appropriate error codes.
 
-### Authentication | 5 |
+### Authentication | 4 |
 
 Proper authentication on routes that require login.
 
@@ -255,10 +255,12 @@ Proper authentication on routes that require login.
 
 Ensure access control or authorization for data that is not accessible to all users.
 
-### Extra feature | 20 |
 
-You can gain up to 20 additional points for extra features.
-However, you can get at most 12 points for features implemented in JavaScript and at most 12 points for backend (python) features and 5 points for CSS features. 
+
+### Extra feature | 25 |
+
+You can gain up to 25 additional points for extra features.
+However, you can get at most 12 points for features implemented in JavaScript and at most 12 points for backend (python) features, 5 points for CSS features, and up to 10 points for integrating a Vector database.
 
 Examples are taken from previous projects in the WebProgramming course. Examples that require learning additional technology are marked with *
 
@@ -286,6 +288,13 @@ Some examples of extra features implemented in JS are
 - *Dynamic update subscription via long polling or websockets (e.g receive chat messages)
 - *Advanced login via Flask Login, JWT tokens or similar
 - *Image storage and validation
+
+#### Vector database 
+
+The application uses a vector database to store and search texts.
+The vector database should contain at least 100 texts.
+It should be possible to search the texts using user input.
+Any vector database of your choice might be used.
 
 ## Presentation
 
