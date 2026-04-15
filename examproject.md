@@ -16,7 +16,7 @@
   - [Functional Requirements](#functional-requirements)
     - [Score Table](#score-table)
     - [Idea followed          | 5 |](#idea-followed-----------5-)
-    - [Howto Run works         | 3 |](#howto-run-works----------3-)
+    - [How to Run works         | 3 |](#how-to-run-works----------3-)
     - [Log in and register users | 5 |](#log-in-and-register-users--5-)
     - [Example data | 2 |](#example-data--2-)
     - [JS Form validation | 5 |](#js-form-validation--5-)
@@ -58,30 +58,30 @@
 
 ## Optional delivery
 
-You have to present your project in person. 
-Presentations will be sheduled on June 10th, 11th and 12th.
-All group members have to be present in the presentation. 
-Since some exchange students will no longer be in the country, we offer you a chance to deliver your project on the early delivery and present in May.
+You have to present your project in person.
+Presentations will be scheduled on June 10th, 11th and 12th.
+All group members must be present for the presentation.
+Since some exchange students will no longer be in the country, we offer you a chance to deliver your project early and present in May.
 
-When doing the optional delivery, you cannot change your project afterwards.
+When doing the optional delivery, you cannot change your project afterward.
 
 ## Assignments
 
-All members of the group need to have passed the assignments. Students that did not pass assignments cannot participate in the project.
+All members of the group need to have passed the assignments. Students who did not pass assignments cannot participate in the project.
 
 ## Overview
 
-For the exam project you are required to design and implement a complete web application, frontend and backend.
+For the exam project, you are required to design and implement a complete web application, frontend and backend.
 
-You are free to chose what kind of application you implement, but restrictions apply to both [technology that you may use](#technology-allowed) and there is some [required functionality](#functional-requirements).
+You are free to choose what kind of application you implement, but restrictions apply to both the [technology that you may use](#technology-allowed) and there is some [required functionality](#functional-requirements).
 
-You have to fix, the idea of your application until the [idea deadline](#idea) and have to show and answer questions about your application in person at the [presentation](#presentation)
+You have to finalize the idea of your application until the [idea deadline](#idea), and have to show and answer questions about your application in person at the [presentation](#presentation).
 
 ## Collaboration requirements
 
 Both group members need to contribute.
 
-You should use git and your groups GitHub repository to actively collaborate and coordinate your work.
+You should use git and your group's GitHub repository to actively collaborate and coordinate your work.
 
 If one member does less than 30% of the commits on GitHub, he may be failed in the project.
 
@@ -98,18 +98,18 @@ Book a meeting using [this link](https://outlook.office.com/bookwithme/user/90a9
 You already proposed a project idea in Assignment 0.
 You can update or change that project idea until 6th of May.
 The project idea only needs to be a very general, e.g. a chat application, or a minesweeper game.
-If your final page does not adhere to the project idea points will be deducted.
+If your final page does not adhere to the project idea, points will be deducted.
 
 ## Project delivery
 
-On the final delivery you should hand in your complete code, and a README.md markdown file.
+On the final delivery, you should hand in your complete code, and a README.md markdown file.
 Your code should also include a SQL script that creates your database, and inserts example data.
 
 The `README.md` file should contain the following sections:
 
 - How to run: e.g.
     > Run the `setup.sql` script to create the database.
-    > Update the database root users password in `app.py`.
+    > Update the database root user's password in `app.py`.
     > Start the application by running `app.py` in the application folder.
 - Instructions for testing, e.g. `username` and `password` for existing users.
 - List of all functionality: List all implemented functionality, to make sure all your work is taken into account. For example
@@ -125,7 +125,7 @@ You may only use the frameworks listed below. If you are unsure if something is 
 
 ### Backend
 
-Your web server should be Flask. Data should be stored in an MySQL database.
+Your web server should be Flask. Data should be stored in a MySQL database.
 You may use the Flask-login plugin, but that is not required. If you do so, note it in your README.md.
 You should write SQL queries.
 Do not use an Object-Relational-Mapper or SQLAlchemy.
@@ -160,7 +160,7 @@ Additionally, you can collect up to 20 points for additional features. See below
 | Criteria | pts |
 | --------------------- | --- |
 | Idea followed          | 5 |
-| Howto Run works         | 3 |
+| How to Run works         | 3 |
 | Log in and register users | 5 |
 | Example data | 2 |
 | JS Form validation | 5 |
@@ -184,7 +184,7 @@ Additionally, you can collect up to 20 points for additional features. See below
 
 The application follows the idea from assignment 0.
 
-### Howto Run works         | 3 |
+### How to Run works         | 3 |
 
 The `README.md` contains sufficient and working explanation how to run the project.
 
@@ -218,7 +218,7 @@ The application uses complex queries, including
 
 ### Insert, Update, delete data | 6 |
 
-The applications operations insert, update and delete data, affecting data in all tables.
+The application's operations insert, update, and delete data, affecting data in all tables.
 
 ### AJAX request used | 5 |
 
@@ -230,7 +230,7 @@ The page layout is dynamic, adjusting to both wide and medium size screens.
 
 ### Semantic tags | 2 |
 
-The html uses semantic tags.
+The HTML uses semantic tags.
 Try to use them extensively, where possible.
 
 ### Code separation | 4 |
@@ -266,7 +266,7 @@ Ensure access control or authorization for data that is not accessible to all us
 You can gain up to 25 additional points for extra features.
 However, you can get at most 12 points for features implemented in JavaScript and at most 12 points for backend (python) features, 5 points for CSS features, and up to 10 points for integrating a Vector database.
 
-Examples are taken from previous projects in the WebProgramming course. Examples that require learning additional technology are marked with *
+Examples are taken from previous projects in the Web Programming course. Examples that require learning additional technology are marked with *
 
 #### CSS Features example:
 
@@ -305,11 +305,11 @@ Any vector database of your choice might be used.
 Each group has to present their project. 
 In the presentation, you have to show the running code, and answer questions about the code.
 
-Presentations will be shedules on June 10th, 11th and 12th.
+Presentations will be scheduled on June 10th, 11th and 12th.
 All group members have to be present in the presentation. Failure to meet up for the presentation will result in not passing the course.
 
-If you have a doctors certificate, showing that you could not attend the presentation, we will arrange a later date.
+If you have a doctor's certificate, showing that you could not attend the presentation, we will arrange a later date.
 
 You have to be able to explain your code on a technical level. 
 For example, if you use the `forEach` method in JavaScript, you should be able to explain:
-> `forEach` is a method on a Array. It takes a function (*callback function*) as argument and executes the *callback function* once for each element in the array. The element is given to the *callback function* as argument.
+> `forEach` is a method on an Array. It takes a function (*callback function*) as argument and executes the *callback function* once for each element in the array. The element is given to the *callback function* as argument.
