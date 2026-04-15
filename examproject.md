@@ -87,7 +87,11 @@ If one member does less than 30% of the commits on GitHub, he may be failed in t
 
 ## Feedback and meeting
 
-Leander will be available for meetings to give feedback, discuss your project and help with any technical difficulties. I recommend that every group asks for feedback on their project idea at least once.
+Leander is available for meetings to give feedback, discuss your project and help with any technical difficulties. I recommend that every group asks for feedback on their project idea at least once.
+
+Book a meeting using [this link](https://outlook.office.com/bookwithme/user/90a9d200a112481b8677a71c1ab2a195@uis.no/meetingtype/q1YLgJWHFkmBl0VtgX-_ig2?anonymous&ismsaljsauthenabled&ep=mlink).
+
+*Some people see wrong meeting times, due to wrong time-zone settings. All meetings are between 12:30 and 16:00.*
 
 ## Idea
 
